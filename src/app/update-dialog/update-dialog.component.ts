@@ -28,7 +28,6 @@ export class UpdateDialogComponent implements OnInit {
 
   updateFuncionario()
   {
-
     this.buService.updateFuncionario(this.func.id,this.func).subscribe(result=>{
       if(result.status == "Ok")
       {

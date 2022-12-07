@@ -31,10 +31,11 @@ export class FuncionariosTableComponent implements OnInit {
   deletarFuncionario(id: number)
   {
     this.buService.deleteFuncionario(id).subscribe(result=>{
-      this._snackBar.open(result.status.toString(),"deletado");
+      if(result.status == "Ok"){
+        this.removerFunc(id);
+      }
+      this._snackBar.open(result.status.toString(),result.mensagem);
     });
-
-    this.refreshList();
 
   }
 
@@ -51,6 +52,13 @@ export class FuncionariosTableComponent implements OnInit {
     this.buService.getAllFuncionarios().subscribe(result=>{
       this.funcionarios = result;
     });
+  }
+
+
+  removerFunc(id: number){
+    let deletedFunc = this.funcionarios.find(x=>x.id==id);
+
+    this.funcionarios.splice(this.funcionarios.indexOf(deletedFunc!,0),1)
   }
 
 }
