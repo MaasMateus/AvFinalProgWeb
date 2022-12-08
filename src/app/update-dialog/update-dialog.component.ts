@@ -49,7 +49,6 @@ export class UpdateDialogComponent implements OnInit {
     this.func.departamento= this.form.get("departamento")?.value,
     this.func.endereco = this.form.get("endereco")?.value,
     this.func.email= this.form.get("email")?.value;
-    console.log(this.func.id);
     this.buService.updateFuncionario(this.func.id,this.func).subscribe(result=>{
       if(result.status == "Ok")
       {

@@ -41,13 +41,11 @@ export class FuncionariosTableComponent implements OnInit {
 
   editarFuncionario(funcionario : Funcionario)
   {
-    console.log("teste");
     this._dialog.open<UpdateDialogComponent,any,Funcionario>(UpdateDialogComponent,{
       data : {
         funcionario
       }
     }).afterClosed().subscribe(x=>{
-        console.log(x!);
         this.alterarInformacoes(x!);
     });
 
