@@ -3,7 +3,7 @@ import { BuServiceService } from '../services/bu-service.service';
 import { Funcionario } from '../models/Fucionarios/Funcionario';
 import { Observable } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { UpdateDialogComponent } from '../update-dialog/update-dialog.component';
 
 @Component({
@@ -41,11 +41,16 @@ export class FuncionariosTableComponent implements OnInit {
 
   editarFuncionario(funcionario : Funcionario)
   {
-    let console = this._dialog.open(UpdateDialogComponent,{
+    console.log("teste");
+    this._dialog.open<UpdateDialogComponent,any,Funcionario>(UpdateDialogComponent,{
       data : {
         funcionario
       }
+    }).afterClosed().subscribe(x=>{
+        console.log(x!);
+        this.alterarInformacoes(x!);
     });
+
   }
 
   refreshList(){
@@ -61,4 +66,10 @@ export class FuncionariosTableComponent implements OnInit {
     this.funcionarios.splice(this.funcionarios.indexOf(deletedFunc!,0),1)
   }
 
+  alterarInformacoes(funcionario: Funcionario)
+  {
+    let index = this.funcionarios.indexOf(funcionario);
+
+    this.funcionarios[index] = funcionario;
+  }
 }

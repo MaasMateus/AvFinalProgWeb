@@ -15,6 +15,9 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatDialogModule} from '@angular/material/dialog';
 import { UpdateDialogComponent } from './update-dialog/update-dialog.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +36,9 @@ import { UpdateDialogComponent } from './update-dialog/update-dialog.component';
     MatSidenavModule,
     MatTableModule,
     MatSnackBarModule,
-    MatDialogModule
+    MatDialogModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

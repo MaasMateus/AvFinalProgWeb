@@ -24,7 +24,8 @@ export class BuServiceService {
 
    updateFuncionario(id: number, funcionario: Funcionario ) : Observable<ResponseFuncionarios>
    {
-      return this.http.put<ResponseFuncionarios>(this.api + `/${id}`,funcionario);
+      console.log(funcionario.id)
+      return this.http.put<ResponseFuncionarios>(this.api + `/${id}`, funcionario);
    }
 
    deleteFuncionario(id:number) : Observable<ResponseFuncionarios>
