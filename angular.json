@@ -103,5 +103,7 @@
       }
     }
   },
-  "defaultProject": "AvFinal"
+  "cli": {
+    "analytics": false
+  }
 }

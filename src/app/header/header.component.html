@@ -1,22 +1,15 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
-    <button mat-icon-button>
-      <mat-icon>menu</mat-icon>
-    </button>
-    <h1>SimpleCRM</h1>
-    <span class="menu-spacer"></span>
-    <div>
-      <a mat-button [routerLink]="'/accounts'"> Accounts </a>
-      <a mat-button [routerLink]="'/create-account'"> Create Account </a>
-      <a mat-button [routerLink]="'/contacts'"> Contacts </a>
-      <a mat-button [routerLink]="'/create-contact'"> Create Contact </a>
-      <a mat-button [routerLink]="'/activities'"> Activities </a>
-      <a mat-button [routerLink]="'/create-activity'"> Create Activity </a>
-
-    </div>
+    <h1>Gestão de funcionários</h1>
+  </mat-toolbar-row>
+  <mat-toolbar-row>
+    <nav>
+      <ul>
+        <li><a mat-button [routerLink]="'#'">Gestão de salários</a></li>
+        <li><a mat-button [routerLink]="'#'">Gestão de Férias</a></li>
+        <li><a mat-button [routerLink]="'#'">Folhas de pagamento</a></li>
+      </ul>
+    </nav>
   </mat-toolbar-row>
 
-  <mat-toolbar-row>
-      <span style="font-size: 12px;">SimpleCRM helps you easily manage your contacts</span>
-    </mat-toolbar-row>
 </mat-toolbar>
