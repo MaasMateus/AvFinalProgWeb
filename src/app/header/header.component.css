@@ -1,27 +1,49 @@
+header {
+  background-color: #404cac;
+}
+
 h1 {
-  font-size: large;
+  color: white;
+  padding: 8px;
 }
 
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  overflow: hidden;
+  background-color: #404cac;
 }
 
 li {
-  display: inline;
+  float: left;
 }
 
 li a {
-  display: inline-block;
-  padding: 8px;
+  display: block;
+  color: #c6c9e6;
+  text-align: center;
+  padding: 14px 16px;
   text-decoration: none;
-  color: #c6cce9;
-  overflow: auto;
+  border: 2px solid #404cac;
 
-  transition: color .5s;
+  transition: color .5s, border .5s;
 }
 
 li a:hover {
   color: white;
+  border-bottom: 2px solid white;
+}
+
+@media (max-width: 750px ) {
+
+  li a:hover {
+    color: white;
+    border-left:  2px solid white;
+    border-bottom: #404cac;
+  }
+
+  li {
+    float: none;
+  }
 }
